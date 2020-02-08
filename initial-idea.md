@@ -8,8 +8,15 @@ main () {
     return
         "Have a " +
         store("chance",
-            ri
-        )
+            ri(1, 100)
+        ) +
+        " chance when struck in combat of increasing armor by " +
+        store("armor",
+            ri(1, 999)
+        ) +
+        " for " +
+        rt(1s, 60s)
+    ;
 }
 
 store (key, value) {
@@ -20,6 +27,12 @@ ri (min, max) => randomi(min, max);
 
 randomi (min, max) {
     return floor(random() * (max - min)) + min;
+}
+
+rt (min, max) => randomt(min, max);
+
+randomt (min, max) {
+    // do stuff
 }
 
 round (val) {

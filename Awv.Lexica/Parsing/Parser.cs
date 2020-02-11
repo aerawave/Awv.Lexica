@@ -1,10 +1,10 @@
-using Lexica.Parsing.Exceptions;
+using Awv.Lexica.Parsing.Exceptions;
 using System;
 using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Lexica.Parsing
+namespace Awv.Lexica.Parsing
 {
     public class Parser
     {

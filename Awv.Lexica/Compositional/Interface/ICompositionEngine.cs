@@ -1,6 +1,6 @@
 ﻿using V8.Net;
 
-namespace Lexica.Compositional.Interface
+namespace Awv.Lexica.Compositional.Interface
 {
     public interface ICompositionEngine
     {

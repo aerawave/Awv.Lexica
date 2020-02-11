@@ -1,9 +1,9 @@
-﻿using Lexica.Compositional.Lexigrams;
-using Lexica.Compositional.Lexigrams.Interface;
-using Lexica.Parsing;
+﻿using Awv.Lexica.Compositional.Lexigrams;
+using Awv.Lexica.Compositional.Lexigrams.Interface;
+using Awv.Lexica.Parsing;
 using System.Text;
 
-namespace Lexica.Compositional
+namespace Awv.Lexica.Compositional
 {
     public class CompositionParser : Parser
     {

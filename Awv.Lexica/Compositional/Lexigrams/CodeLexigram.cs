@@ -1,8 +1,8 @@
-﻿using Lexica.Compositional.Interface;
-using Lexica.Compositional.Lexigrams.Interface;
-using Lexica.Parsing;
+﻿using Awv.Lexica.Compositional.Interface;
+using Awv.Lexica.Compositional.Lexigrams.Interface;
+using Awv.Lexica.Parsing;
 
-namespace Lexica.Compositional.Lexigrams
+namespace Awv.Lexica.Compositional.Lexigrams
 {
     public class CodeLexigram : IIdLexigram
     {

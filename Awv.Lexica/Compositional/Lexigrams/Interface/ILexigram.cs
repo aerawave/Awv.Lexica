@@ -1,6 +1,6 @@
-﻿using Lexica.Compositional.Interface;
+﻿using Awv.Lexica.Compositional.Interface;
 
-namespace Lexica.Compositional.Lexigrams.Interface
+namespace Awv.Lexica.Compositional.Lexigrams.Interface
 {
     public interface ILexigram
     {

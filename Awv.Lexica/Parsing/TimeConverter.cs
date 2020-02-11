@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Lexica.Parsing
+namespace Awv.Lexica.Parsing
 {
     public struct TimeConverter
     {

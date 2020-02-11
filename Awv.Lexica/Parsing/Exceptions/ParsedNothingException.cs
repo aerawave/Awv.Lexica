@@ -1,6 +1,6 @@
 using System;
 
-namespace Lexica.Parsing.Exceptions
+namespace Awv.Lexica.Parsing.Exceptions
 {
     public class ParsedNothingException : Exception
     {

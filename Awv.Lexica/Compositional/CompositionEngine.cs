@@ -1,4 +1,4 @@
-﻿using Lexica.Compositional.Interface;
+﻿using Awv.Lexica.Compositional.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using V8.Net;
 
-namespace Lexica.Compositional
+namespace Awv.Lexica.Compositional
 {
     public class CompositionEngine : ICompositionEngine
     {

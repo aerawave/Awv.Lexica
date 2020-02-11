@@ -1,9 +1,9 @@
-﻿using Lexica.Compositional.Interface;
-using Lexica.Compositional.Lexigrams.Interface;
+﻿using Awv.Lexica.Compositional.Interface;
+using Awv.Lexica.Compositional.Lexigrams.Interface;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lexica.Compositional
+namespace Awv.Lexica.Compositional
 {
     public class Composition : List<ILexigram>
     {

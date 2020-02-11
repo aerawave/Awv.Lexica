@@ -13,7 +13,7 @@ namespace Awv.Lexica.Compositional
         /// <summary>
         /// The underlying JavaScript engine to use.
         /// </summary>
-        private V8Engine Engine { get; set; } = new V8Engine();
+        public V8Engine InternalEngine { get; set; } = new V8Engine();
         public Dictionary<Type, string> Prescripts { get; set; } = new Dictionary<Type, string>();
         public bool ConvertTimeMarks { get; set; } = false;
 
@@ -35,8 +35,8 @@ namespace Awv.Lexica.Compositional
 
             if (staticMethods.Count > 0)
             {
-                Engine.RegisterType<TLibrary>(null, true, ScriptMemberSecurity.Permanent);
-                Engine.GlobalObject.SetProperty(typeof(TLibrary));
+                InternalEngine.RegisterType<TLibrary>(null, true, ScriptMemberSecurity.Permanent);
+                InternalEngine.GlobalObject.SetProperty(typeof(TLibrary));
                 var prescript = new List<string>();
                 foreach (var method in staticMethods)
                 {
@@ -65,7 +65,7 @@ namespace Awv.Lexica.Compositional
         {
             var prescript = string.Join("\n", Prescripts.Values);
 
-            return Engine.Execute($"{prescript}\n\n{script}", "V8.NET+Prescripts", true, 0, true);
+            return InternalEngine.Execute($"{prescript}\n\n{script}", "V8.NET+Prescripts", true, 0, true);
         }
 
         /// <summary>
@@ -75,7 +75,24 @@ namespace Awv.Lexica.Compositional
         /// <param name="value">Value of the variable</param>
         public void SetProperty(string name, object value)
         {
-            Engine.GlobalObject.SetProperty(name, Engine.CreateValue(value));
+            InternalEngine.GlobalObject.SetProperty(name, InternalEngine.CreateValue(value));
+        }
+
+        /// <summary>
+        /// Gets a global variable with the given <paramref name="name"/>.
+        /// </summary>
+        /// <param name="name">Name of the variable</param>
+        /// <returns>Value assigned to the variable</returns>
+        public InternalHandle GetProperty(string name)
+        {
+            try
+            {
+                return Execute(name);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public bool ShouldConvertTimeMarks() => ConvertTimeMarks;

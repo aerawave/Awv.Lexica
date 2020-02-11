@@ -7,11 +7,11 @@ namespace Awv.Lexica.Compositional
 {
     public class CompositionParser : Parser
     {
-        private const char CodeOpener = '`';
-        private const char CodeCloser = '`';
-        private const char EscapeChar = '\\';
-        private const char IdOpener = '(';
-        private const char IdCloser = ')';
+        public const char CodeStart = '`';
+        public const char CodeEnd = '`';
+        public const char EscapeChar = '\\';
+        public const char IdStart = '(';
+        public const char IdEnd = ')';
 
         public CompositionParser(string source) : base(source)
         {
@@ -37,7 +37,7 @@ namespace Awv.Lexica.Compositional
         public ILexigram ReadNext()
         {
             ILexigram output;
-            if (Expect(CodeOpener, true).HasValue)
+            if (Expect(CodeStart, true).HasValue)
             {
                 output = ReadCode();
             } else
@@ -48,7 +48,7 @@ namespace Awv.Lexica.Compositional
         }
 
         /// <summary>
-        /// Reads until either at end of string, or until a <see cref="CodeOpener"/> is found. If an <see cref="EscapeChar"/> is found, the next character is read regardless.
+        /// Reads until either at end of string, or until a <see cref="CodeStart"/> is found. If an <see cref="EscapeChar"/> is found, the next character is read regardless.
         /// </summary>
         /// <returns>A <see cref="Lexigram"/> of the provided string</returns>
         public ILexigram ReadString()
@@ -68,7 +68,7 @@ namespace Awv.Lexica.Compositional
                     default:
                         parsed.Append(ch);
                         break;
-                    case CodeOpener:
+                    case CodeStart:
                         parsing = false;
                         break;
                 }
@@ -79,19 +79,19 @@ namespace Awv.Lexica.Compositional
         }
 
         /// <summary>
-        /// Reads a string until a <see cref="CodeCloser"/> is found. Then checks for an <see cref="IdOpener"/>. If one is found, a string is read until an <see cref="IdCloser"/> is found to provide an ID.
+        /// Reads a string until a <see cref="CodeEnd"/> is found. Then checks for an <see cref="IdStart"/>. If one is found, a string is read until an <see cref="IdEnd"/> is found to provide an ID.
         /// </summary>
         /// <returns>A <see cref="CodeLexigram"/> of the provided code</returns>
         public ILexigram ReadCode()
         {
-            var code = ReadUntilAny(CodeCloser);
-            Expect(CodeCloser);
+            var code = ReadUntilAny(CodeEnd);
+            Expect(CodeEnd);
             var id = (string)null;
 
-            if (Expect(IdOpener, true).HasValue)
+            if (Expect(IdStart, true).HasValue)
             {
-                id = ReadUntilAny(IdCloser);
-                Expect(IdCloser);
+                id = ReadUntilAny(IdEnd);
+                Expect(IdEnd);
             }
 
             return new CodeLexigram(id, code);

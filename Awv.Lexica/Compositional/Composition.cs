@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Awv.Lexica.Compositional
 {
-    public class Composition : List<ILexigram>
+    public class Composition : List<ILexigram>, ILexigram
     {
         public string Joiner { get; set; } = "";
         /// <summary>
@@ -31,6 +31,9 @@ namespace Awv.Lexica.Compositional
             }
             return string.Join(Joiner, built);
         }
+
+        public object GetValue(ICompositionEngine engine)
+            => Build(engine);
 
         public override string ToString() => string.Join(Joiner, this);
     }

@@ -51,7 +51,7 @@ namespace Awv.Lexica.Compositional
         /// Reads until either at end of string, or until a <see cref="CodeStart"/> is found. If an <see cref="EscapeChar"/> is found, the next character is read regardless.
         /// </summary>
         /// <returns>A <see cref="Lexigram"/> of the provided string</returns>
-        public ILexigram ReadString()
+        public Lexigram ReadString()
         {
             var parsing = true;
             var parsed = new StringBuilder();
@@ -82,7 +82,7 @@ namespace Awv.Lexica.Compositional
         /// Reads a string until a <see cref="CodeEnd"/> is found. Then checks for an <see cref="IdStart"/>. If one is found, a string is read until an <see cref="IdEnd"/> is found to provide an ID.
         /// </summary>
         /// <returns>A <see cref="CodeLexigram"/> of the provided code</returns>
-        public ILexigram ReadCode()
+        public CodeLexigram ReadCode()
         {
             var code = ReadUntilAny(CodeEnd);
             Expect(CodeEnd);

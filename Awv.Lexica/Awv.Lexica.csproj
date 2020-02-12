@@ -10,9 +10,9 @@
     <PackageProjectUrl>https://github.com/aerawave/Awv.Lexica</PackageProjectUrl>
     <PackageTags>aerawave</PackageTags>
     <PackageReleaseNotes>Lexica serves two purposes.  The first purposes is that I could not find a good formatting solution for strings which allowed a little bit of basic code without serious security flaws (I did not want to randomly compile and run C# code for example). So I wrote my own.  The second purpose is to provide a basic parser in the form of the Parser class. There may be libraries out there which can accomplish what I wanted from this, but I had already wrote the code so I just put it in this repo and utilized it.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
-    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>

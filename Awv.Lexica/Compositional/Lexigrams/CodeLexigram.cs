@@ -6,8 +6,8 @@ namespace Awv.Lexica.Compositional.Lexigrams
 {
     public class CodeLexigram : IIdLexigram
     {
-        public string Id { get; set; }
-        public string Code { get; set; }
+        public virtual string Id { get; set; }
+        public virtual string Code { get; set; }
 
         public CodeLexigram(string id, string code)
         {
@@ -24,7 +24,7 @@ namespace Awv.Lexica.Compositional.Lexigrams
         {
             if (Id != null)
             {
-                var value = engine.Execute(Id);
+                var value = engine.GetProperty(Id);
                 if (value != null)
                     return value;
             }

@@ -32,7 +32,7 @@ namespace Awv.Lexica.Compositional
             return string.Join(Joiner, built);
         }
 
-        public object GetValue(ICompositionEngine engine)
+        public virtual object GetValue(ICompositionEngine engine)
             => Build(engine);
 
         public override string ToString() => string.Join(Joiner, this);

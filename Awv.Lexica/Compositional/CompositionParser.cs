@@ -85,8 +85,6 @@ namespace Awv.Lexica.Compositional
                             parsed.Append(ch);
                         }
                         break;
-                    case CodeStart:
-                        break;
                 }
             }
             if (!EndOfString) Back();

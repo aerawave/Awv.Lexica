@@ -160,11 +160,13 @@ namespace Awv.Lexica.Parsing
         {
             var parsing = true;
             var parsed = new StringBuilder();
-            char ch = '\0';
             while (parsing) {
-                parsing = !EndOfString && predicate(parsed.ToString(), ch = ReadChar());
+                var ch = PeekChar();
+                parsing = predicate(parsed.ToString(), ch);
                 if (parsing) {
+                    ConsumeChar();
                     parsed.Append(ch);
+                    parsing = !EndOfString;
                 }
             }
             Back();

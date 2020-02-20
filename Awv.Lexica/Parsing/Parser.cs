@@ -167,7 +167,7 @@ namespace Awv.Lexica.Parsing
                     parsed.Append(ch);
                 }
             }
-            Back();
+            if (!EndOfString) Back();
 
             return parsed.ToString();
         }

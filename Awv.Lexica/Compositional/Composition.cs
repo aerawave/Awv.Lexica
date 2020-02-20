@@ -13,7 +13,7 @@ namespace Awv.Lexica.Compositional
         /// </summary>
         /// <param name="engine">The engine to execute code against</param>
         /// <returns>The compiled string from the engine with the composition</returns>
-        public string Build(ICompositionEngine engine)
+        public virtual string Build(ICompositionEngine engine)
         {
             var built = new StringBuilder();
             foreach (var token in this)

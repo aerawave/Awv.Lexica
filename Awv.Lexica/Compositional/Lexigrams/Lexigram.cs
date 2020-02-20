@@ -12,7 +12,7 @@ namespace Awv.Lexica.Compositional.Lexigrams
             Value = value;
         }
 
-        public object GetValue(ICompositionEngine engine)
+        public virtual object GetValue(ICompositionEngine engine)
             => Value;
 
         public static implicit operator Lexigram(string value) => new Lexigram(value);

@@ -20,7 +20,7 @@ namespace Awv.Lexica.Compositional.Lexigrams
         /// </summary>
         /// <param name="engine">Engine to execute code against</param>
         /// <returns>The value from evaluation of the <see cref="Code"/></returns>
-        public object GetValue(ICompositionEngine engine)
+        public virtual object GetValue(ICompositionEngine engine)
         {
             if (Id != null)
             {

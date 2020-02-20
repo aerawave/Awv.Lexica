@@ -9,10 +9,10 @@
     <RepositoryUrl>https://github.com/aerawave/Awv.Lexica</RepositoryUrl>
     <PackageProjectUrl>https://github.com/aerawave/Awv.Lexica</PackageProjectUrl>
     <PackageTags>aerawave</PackageTags>
-    <PackageReleaseNotes>Fixed an issue where Parser.ReadWhile would invoke Back at EndOfString.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.8.0</AssemblyVersion>
-    <FileVersion>1.0.8.0</FileVersion>
-    <Version>1.0.8</Version>
+    <PackageReleaseNotes>Made CodeLexigram's and Lexigram's GetValue methods overridable, as well as Composition's Build method.</PackageReleaseNotes>
+    <AssemblyVersion>1.0.9.0</AssemblyVersion>
+    <FileVersion>1.0.9.0</FileVersion>
+    <Version>1.0.9</Version>
   </PropertyGroup>
 
   <ItemGroup>

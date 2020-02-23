@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -9,10 +9,10 @@
     <RepositoryUrl>https://github.com/aerawave/Awv.Lexica</RepositoryUrl>
     <PackageProjectUrl>https://github.com/aerawave/Awv.Lexica</PackageProjectUrl>
     <PackageTags>aerawave</PackageTags>
-    <PackageReleaseNotes>Fixed some ordering of operations in Parser.ReadWhile</PackageReleaseNotes>
-    <AssemblyVersion>1.0.12.0</AssemblyVersion>
-    <FileVersion>1.0.12.0</FileVersion>
-    <Version>1.0.12</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <AssemblyVersion>1.0.15.0</AssemblyVersion>
+    <FileVersion>1.0.15.0</FileVersion>
+    <Version>1.0.15</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,10 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="C:\Users\jaxki\.nuget\packages\v8.net\1.1.8\contentFiles\any\netstandard2.0\V8_Net_Proxy_x64.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Update="C:\Users\$(USERNAME)\.nuget\packages\v8.net\1.1.8\contentFiles\any\netstandard2.0\V8_Net_Proxy_x64.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
-    <Content Update="C:\Users\jaxki\.nuget\packages\v8.net\1.1.8\contentFiles\any\netstandard2.0\V8_Net_Proxy_x86.dll">
+    <Content Update="C:\Users\$(USERNAME)\.nuget\packages\v8.net\1.1.8\contentFiles\any\netstandard2.0\V8_Net_Proxy_x86.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
